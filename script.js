@@ -5,6 +5,8 @@ function generarNumeroOrden() {
 function generatePDF() {
     var doc = new jsPDF();
 
+    console.log('Generando PDF...');
+
     // Define el ancho y alto de la página
     var pageWidth = doc.internal.pageSize.width;
     var pageHeight = doc.internal.pageSize.height;
