@@ -278,10 +278,6 @@ main {
     margin-top: 10px;
 }
 
-.contenido-principal {
-    /* Estilos adicionales según tus necesidades */
-}
-
 /* Estilo personalizado para el scroll con efecto de neon en tono morado oscuro */
 ::-webkit-scrollbar {
     width: 10px;
