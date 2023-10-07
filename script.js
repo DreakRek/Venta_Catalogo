@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const compraForm = document.getElementById('compra-form');
     const facturaContainer = document.getElementById('factura-container');
     const cerrarFacturaBtn = document.getElementById('cerrar-factura-btn');
+    const botonGeneratePDF = document.getElementById('generatePDF');
+    if (botonGeneratePDF) {
+        botonGeneratePDF.addEventListener('click', generatePDF);
+    }
 
     // Agrega un controlador de clic al botón/icono de cierre
     botonCerrarModal.addEventListener('click', () => {

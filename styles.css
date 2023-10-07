@@ -1,10 +1,12 @@
 /* styles.css */
-body, html {
+body,
+html {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url('./media/fondo.png'); /* Ruta de tu imagen de fondo */
+    background-image: url('./media/fondo.png');
+    /* Ruta de tu imagen de fondo */
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -34,9 +36,12 @@ header {
 .logo {
     max-width: 250px;
     position: absolute;
-    top: 0px; /* Ajusta la posición vertical del logotipo */
-    left: -0.7ch; /* Ajusta la posición horizontal del logotipo */
-    z-index: 1; /* Asegura que el logotipo esté encima del fondo difuminado */
+    top: 0px;
+    /* Ajusta la posición vertical del logotipo */
+    left: -0.7ch;
+    /* Ajusta la posición horizontal del logotipo */
+    z-index: 1;
+    /* Asegura que el logotipo esté encima del fondo difuminado */
 }
 
 .descripcion-veh {
@@ -49,8 +54,10 @@ header {
     border-radius: 5px;
     color: #00ff15;
     margin: 10px 15px;
-    padding: 5px; /* Agrega un relleno para destacar el precio */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 5px;
+    /* Agrega un relleno para destacar el precio */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo semitransparente */
 }
 
 .descripcion-vehiculos {
@@ -93,14 +100,16 @@ header {
 .titulo-neon {
     text-align: center;
     font-size: 35px;
-    font-family: 'Arial', sans-serif; /* Usa la fuente que prefieras */
+    font-family: 'Arial', sans-serif;
+    /* Usa la fuente que prefieras */
     text-transform: uppercase;
     letter-spacing: 5px;
     background: linear-gradient(45deg, #ff00ff, #ff0077);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: neon-pulse 2s linear infinite; /* Animación de pulsos de neon */
+    animation: neon-pulse 2s linear infinite;
+    /* Animación de pulsos de neon */
 }
 
 @keyframes neon-pulse {
@@ -108,10 +117,12 @@ header {
         filter: brightness(150%);
         text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
     }
+
     50% {
         filter: brightness(100%);
         text-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
     }
+
     100% {
         filter: brightness(150%);
         text-shadow: 0 0 10px rgba(255, 0, 255, 0.7);
@@ -123,10 +134,13 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
-    backdrop-filter: blur(10px); /* Efecto de desenfoque para el fondo */
-    background-color: rgba(255, 255, 255, 0); /* Fondo transparente */
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque para el fondo */
+    background-color: rgba(255, 255, 255, 0);
+    /* Fondo transparente */
     max-height: 100%;
-    flex-grow: 1; /* Hace que el catálogo ocupe todo el espacio disponible */
+    flex-grow: 1;
+    /* Hace que el catálogo ocupe todo el espacio disponible */
 }
 
 .productos-grid {
@@ -143,7 +157,8 @@ main {
     margin: 10px;
     width: 300px;
     text-align: center;
-    backdrop-filter: blur(0px); /* Difuminado por defecto */
+    backdrop-filter: blur(0px);
+    /* Difuminado por defecto */
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, transform-origin 0s;
@@ -154,9 +169,12 @@ main {
 
 /* Estilos de producto al hacer hover (nítidos) */
 .producto:hover {
-    transform: scale(1.05); /* Aumenta el tamaño al hacer hover */
-    transition: transform 0.5s ease; /* Agrega una transición suave */
-    backdrop-filter: none; /* Elimina el difuminado al hacer hover */
+    transform: scale(1.05);
+    /* Aumenta el tamaño al hacer hover */
+    transition: transform 0.5s ease;
+    /* Agrega una transición suave */
+    backdrop-filter: none;
+    /* Elimina el difuminado al hacer hover */
 }
 
 /* Estilos de imagen del producto */
@@ -164,13 +182,15 @@ main {
     max-width: 100%;
     height: auto;
     border-radius: 5px 5px 0 0;
-    transition: transform 0.5s ease; /* Agrega una transición de escala */
+    transition: transform 0.5s ease;
+    /* Agrega una transición de escala */
     position: relative;
     z-index: 0;
 }
 
 .boton-comprar {
-    background: linear-gradient(45deg, #ff00ff, #ff0077); /* Degradado de colores */
+    background: linear-gradient(45deg, #ff00ff, #ff0077);
+    /* Degradado de colores */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -178,22 +198,25 @@ main {
     border-radius: 5px;
     font-weight: bold;
     text-transform: uppercase;
-    animation: neon 1.5s ease-in-out infinite; /* Animación de destello */
+    animation: neon 1.5s ease-in-out infinite;
+    /* Animación de destello */
 }
 
 @keyframes neon {
     0% {
         box-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
-                    0 0 20px rgba(255, 0, 255, 0.7),
-                    0 0 30px rgba(255, 0, 255, 0.7);
+            0 0 20px rgba(255, 0, 255, 0.7),
+            0 0 30px rgba(255, 0, 255, 0.7);
     }
+
     50% {
         box-shadow: none;
     }
+
     100% {
         box-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
-                    0 0 20px rgba(255, 0, 255, 0.7),
-                    0 0 30px rgba(255, 0, 255, 0.7);
+            0 0 20px rgba(255, 0, 255, 0.7),
+            0 0 30px rgba(255, 0, 255, 0.7);
     }
 }
 
@@ -207,9 +230,12 @@ main {
     text-align: center;
     padding: 10px;
     box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.281);
-    backdrop-filter: blur(10px); /* Efecto de desenfoque para el footer */
-    border-top: 5px solid transparent; /* Agregamos un borde transparente en la parte superior */
+    backdrop-filter: blur(10px);
+    /* Efecto de desenfoque para el footer */
+    border-top: 5px solid transparent;
+    /* Agregamos un borde transparente en la parte superior */
 }
+
 .pagina-carga {
     display: flex;
     flex-direction: column;
@@ -221,21 +247,29 @@ main {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 9999; /* Asegura que esté en la parte superior */
+    z-index: 9999;
+    /* Asegura que esté en la parte superior */
 }
 
 .spinner {
     border: 6px solid transparent;
-    border-top: 6px solid #ff00ff; /* Color neon */
+    border-top: 6px solid #ff00ff;
+    /* Color neon */
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    animation: spin 1s linear infinite; /* Animación giratoria */
+    animation: spin 1s linear infinite;
+    /* Animación giratoria */
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .pagina-carga p {
@@ -243,18 +277,24 @@ main {
     font-size: 18px;
     margin-top: 10px;
 }
+
 .contenido-principal {
     /* Estilos adicionales según tus necesidades */
 }
+
 /* Estilo personalizado para el scroll con efecto de neon en tono morado oscuro */
 ::-webkit-scrollbar {
-    width: 10px; /* Ancho del scrollbar */
-    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo del scrollbar */
+    width: 10px;
+    /* Ancho del scrollbar */
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Color de fondo del scrollbar */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #800080; /* Color morado oscuro del thumb (barra deslizante) */
-    border-radius: 5px; /* Borde redondeado del thumb */
+    background-color: #800080;
+    /* Color morado oscuro del thumb (barra deslizante) */
+    border-radius: 5px;
+    /* Borde redondeado del thumb */
     /* Agregamos el efecto de brillo tipo "neón" usando una animación */
     animation: neon-glow 1s linear infinite;
 }
@@ -262,15 +302,21 @@ main {
 /* Animación para el efecto de brillo tipo "neón" */
 @keyframes neon-glow {
     0% {
-        box-shadow: 0 0 5px #800080, 0 0 10px #ff0077, 0 0 15px #800080; /* Sombras brillantes */
+        box-shadow: 0 0 5px #800080, 0 0 10px #ff0077, 0 0 15px #800080;
+        /* Sombras brillantes */
     }
+
     50% {
-        box-shadow: none; /* Sin sombra en la mitad de la animación */
+        box-shadow: none;
+        /* Sin sombra en la mitad de la animación */
     }
+
     100% {
-        box-shadow: 0 0 5px #800080, 0 0 10px #ff0077, 0 0 15px #800080; /* Sombras brillantes */
+        box-shadow: 0 0 5px #800080, 0 0 10px #ff0077, 0 0 15px #800080;
+        /* Sombras brillantes */
     }
 }
+
 /* Estilos para el modal */
 .modal-background {
     display: none;
@@ -281,18 +327,24 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semitransparente */
-    z-index: 9998; /* Asegura que esté detrás del modal */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro semitransparente */
+    z-index: 9998;
+    /* Asegura que esté detrás del modal */
 }
+
 /* Estilos para el modal */
 .modal {
     display: none;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 50%; /* Centra verticalmente en relación con la ventana del navegador */
-    left: 50%; /* Centra horizontalmente en relación con la ventana del navegador */
-    transform: translate(-50%, -50%); /* Centra el modal completamente */
+    top: 50%;
+    /* Centra verticalmente en relación con la ventana del navegador */
+    left: 50%;
+    /* Centra horizontalmente en relación con la ventana del navegador */
+    transform: translate(-50%, -50%);
+    /* Centra el modal completamente */
     background-color: #fff;
     padding: 2rem;
     border-radius: 10px;
@@ -300,7 +352,8 @@ main {
     min-width: 300px;
     max-width: 80%;
     text-align: center;
-    z-index: 9999; /* Asegura que esté encima del fondo oscuro */
+    z-index: 9999;
+    /* Asegura que esté encima del fondo oscuro */
 }
 
 .modal-content {
@@ -325,6 +378,7 @@ main {
     max-width: 400px;
     margin: 0 auto;
 }
+
 #factura-content {
     font-size: 16px;
     margin-top: 10px;
@@ -350,7 +404,8 @@ main {
 }
 
 .close:hover {
-    color: #ff00ff; /* Cambia el color al hacer hover */
+    color: #ff00ff;
+    /* Cambia el color al hacer hover */
 }
 
 /* Estilos para el formulario dentro del modal */
