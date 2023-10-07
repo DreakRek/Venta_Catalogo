@@ -1,3 +1,8 @@
+function generarNumeroOrden() {
+    const numeroOrden = Math.floor(Math.random() * 10000); // Genera un n�mero aleatorio entre 0 y 9999
+    return numeroOrden;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const botonesComprar = document.querySelectorAll('.boton-comprar');
     const modalBackground = document.getElementById('modal-background');
@@ -53,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const valor = document.getElementById('valor-producto').value;
         const modelo = document.getElementById('modelo-producto').value;
         const foto = document.getElementById('foto-producto').value;
+        const numeroOrden = generarNumeroOrden();
 
         const facturaHTML = `
             <p>Nombre: ${nombre}</p>
@@ -60,8 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>Discordtag: ${discordtag}</p>
             <p>Producto: ${modelo}</p>
             <p>Precio: ${valor} DIX</p>
-            <!-- Agrega más detalles de la factura según tus necesidades -->
             <img src="${foto}" alt="${modelo}" id="imagen-producto-factura">
+            <p><strong>Numero de Orden:</strong> ${numeroOrden}</p>
 
         `;
 
