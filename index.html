@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="styles.css">
     <title>Vehiculos Exclusivos</title>
     <link rel="icon" type="image/x-icon" href="./media/icon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
 </head>
-
+<button id="getPDF" onclick="generatePDF()">Descargar PDF</button>
 <body>
     <div class="contenido-principal">
         <div class="contenedor">
@@ -29,8 +33,8 @@
                     <p class="descripcion-veh">Capacidad: 2 Pasajeros.</p>
                     <p class="descripcion-veh">Maletero: 0 Espacio.</p>
                     <p class="descripcion-veh">Gasolina: Ilimitada.</p>
-                    <p class="descripcion-veh_price">Precio: 150 DIX</p>
-                    <button class="boton-comprar" data-nombre="Dodo" data-precio="150"
+                    <p class="descripcion-veh_price">Precio: 200 DIX</p>
+                    <button class="boton-comprar" data-nombre="Dodo" data-precio="200"
                         data-imagen="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_593.jpg">Comprar</button>
                 </section>
                 <section class="producto">
@@ -41,8 +45,9 @@
                     <p class="descripcion-veh">Capacidad: 1 Pasajero.</p>
                     <p class="descripcion-veh">Maletero: 0 Espacio.</p>
                     <p class="descripcion-veh">Gasolina: Ilimitada.</p>
-                    <p class="descripcion-veh_price">Precio: 200 DIX</p>
-                    <button class="boton-comprar" onclick="solicitarCompra()" data-nombre="Shamal" data-precio="200" data-imagen="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_519.jpg">Comprar</button>
+                    <p class="descripcion-veh_price">Precio: 300 DIX</p>
+                    <button class="boton-comprar" data-nombre="Shamal" data-precio="300" 
+                        data-imagen="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_519.jpg">Comprar</button>
                 </section>
                 <section class="producto">
                     <img class="producto-img" src="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_428.jpg"
@@ -53,8 +58,8 @@
                     <p class="descripcion-veh">Maletero: 12 Espacio.</p>
                     <p class="descripcion-veh">Gasolina: 80 Litros.</p>
                     <p class="descripcion-veh">Velocidad: 80 KMH.</p>
-                    <p class="descripcion-veh_price">Precio: 85 DIX</p>
-                    <button class="boton-comprar" data-nombre="Securicar" data-precio="85"
+                    <p class="descripcion-veh_price">Precio: 150 DIX</p>
+                    <button class="boton-comprar" data-nombre="Securicar" data-precio="150"
                         data-imagen="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_428.jpg">Comprar</button>
                 </section>
                 <section class="producto">
@@ -66,8 +71,8 @@
                     <p class="descripcion-veh">Maletero: 0 Espacio.</p>
                     <p class="descripcion-veh">Gasolina: 150 Litros.</p>
                     <p class="descripcion-veh">Velocidad: 127 KMH.</p>
-                    <p class="descripcion-veh_price">Precio: 90 DIX</p>
-                    <button class="boton-comprar" data-nombre="Packer" data-precio="90"
+                    <p class="descripcion-veh_price">Precio: 125 DIX</p>
+                    <button class="boton-comprar" data-nombre="Packer" data-precio="125"
                         data-imagen="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_443.jpg">Comprar</button>
                 </section>
                 <section class="producto">
@@ -92,8 +97,8 @@
                     <p class="descripcion-veh">Maletero: 0 Espacio.</p>
                     <p class="descripcion-veh">Gasolina: 150 Litros.</p>
                     <p class="descripcion-veh">Velocidad: 111 KMH.</p>
-                    <p class="descripcion-veh_price">Precio: 85 DIX</p>
-                    <button class="boton-comprar" data-nombre="Barracks" data-precio="150"
+                    <p class="descripcion-veh_price">Precio: 90 DIX</p>
+                    <button class="boton-comprar" data-nombre="Barracks" data-precio="90"
                         data-imagen="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_433.jpg">Comprar</button>
                 </section>
                 <section class="producto">
@@ -144,8 +149,8 @@
                     <p class="descripcion-veh">Maletero: 4 Espacio.</p>
                     <p class="descripcion-veh">Gasolina: 60 Litros.</p>
                     <p class="descripcion-veh">Velocidad: 162 KMH.</p>
-                    <p class="descripcion-veh_price">Precio: 85 DIX</p>
-                    <button class="boton-comprar" data-nombre="Towtruck" data-precio="85"
+                    <p class="descripcion-veh_price">Precio: 100 DIX</p>
+                    <button class="boton-comprar" data-nombre="Towtruck" data-precio="100"
                         data-imagen="https://assets.open.mp/assets/images/vehiclePictures/Vehicle_525.jpg">Comprar</button>
                 </section>
             </main>
@@ -189,10 +194,11 @@
             </form>
         </div>
         <div class="modal-content" id="factura-container">
-            <h2>Factura</h2>
             <div id="factura-content">
                 <!-- Contenido de la factura -->
             </div>
+            <p style="color: red;">Manda este PDF al Ticket Solicitar Admin</p>
+            <button id="getPDF" onclick="generatePDF()">Descargar PDF</button>
             <button id="cerrar-factura-btn">volver</button>
         </div>
     </div>

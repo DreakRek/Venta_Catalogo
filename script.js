@@ -1,7 +1,86 @@
 function generarNumeroOrden() {
-    const numeroOrden = Math.floor(Math.random() * 10000); // Genera un número aleatorio entre 0 y 9999
+    const numeroOrden = Math.floor(Math.random() * 10000000); // Genera un número aleatorio entre 0 y 9999
     return numeroOrden;
 }
+function generatePDF() {
+    var doc = new jsPDF();
+
+    // Define el ancho y alto de la página
+    var pageWidth = doc.internal.pageSize.width;
+    var pageHeight = doc.internal.pageSize.height;
+
+    // Define el margen superior
+    var marginTop = 20;
+
+    // Define colores personalizados
+    var primaryColor = "#ff5733"; // Color primario
+    var secondaryColor = "#333"; // Color secundario
+
+    // Estilo de fuente personalizado
+    doc.setFont("helvetica");
+    doc.setFontSize(12);
+
+    // Dibuja un rectángulo como fondo
+    doc.setFillColor("#f3f3f3"); // Color del fondo
+    doc.rect(0, 0, pageWidth, pageHeight, 'F'); // Dibuja el rectángulo y lo llena
+
+    // Título de la factura
+    doc.setFontSize(30);
+    doc.setFontStyle("bold");
+    doc.text("Factura", 80, marginTop, true);
+
+    // Número de orden
+    doc.setFontStyle("normal");
+    doc.setTextColor(secondaryColor);
+    doc.setFontSize(12);
+    doc.text("Numero de Orden: ", 20, marginTop + 20);
+    doc.text(generarNumeroOrden().toString(), 70, marginTop + 20);
+
+    // Datos del cliente
+    doc.text("Nombre:", 20, marginTop + 40);
+    doc.text(document.getElementById('nombre').value, 70, marginTop + 40);
+    doc.text("Apellido:", 20, marginTop + 50);
+    doc.text(document.getElementById('apellido').value, 70, marginTop + 50);
+    doc.text("Discordtag:", 20, marginTop + 60);
+    doc.text(document.getElementById('discordtag').value, 70, marginTop + 60);
+
+    // Detalles del producto
+    doc.text("Producto:", 20, marginTop + 80);
+    doc.text(document.getElementById('modelo-producto').value, 70, marginTop + 80);
+    doc.text("Precio:", 20, marginTop + 90);
+    doc.text(document.getElementById('valor-producto').value + " DIX", 70, marginTop + 90);
+
+    // Agrega una línea divisoria
+    doc.setLineWidth(0.5);
+    doc.line(20, marginTop + 100, pageWidth - 20, marginTop + 100);
+
+    // Precio total
+    var total = parseFloat(document.getElementById('valor-producto').value);
+    doc.setFontSize(14);
+    doc.text("Total:", 20, marginTop + 110);
+    doc.text(total.toFixed(2) + " DIX", 70, marginTop + 110);
+
+    // Genera el código de barras
+    var codigoDeBarras = generarNumeroOrden().toString();
+
+    // Agrega el código de barras al PDF
+    var canvas = document.createElement("canvas");
+    JsBarcode(canvas, codigoDeBarras, {
+        format: "CODE128",
+        displayValue: true,
+        margin: 20,
+    });
+
+    // Convierte el canvas a una imagen en formato base64
+    var barcodeDataUrl = canvas.toDataURL("image/png");
+
+    // Agrega la imagen del código de barras al PDF
+    doc.addImage(barcodeDataUrl, 'PNG', 20, marginTop + 130, 100, 30);
+
+    // Guarda el PDF con un nombre específico
+    doc.save('Factura-Vehiculo-Dix.pdf');
+}
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const botonesComprar = document.querySelectorAll('.boton-comprar');
@@ -60,7 +139,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const foto = document.getElementById('foto-producto').value;
         const numeroOrden = generarNumeroOrden();
 
+
         const facturaHTML = `
+            <h2>Factura</h2>
             <p>Nombre: ${nombre}</p>
             <p>Apellido: ${apellido}</p>
             <p>Discordtag: ${discordtag}</p>
@@ -70,8 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <p><strong>Numero de Orden:</strong> ${numeroOrden}</p>
 
         `;
-
-        // Inserta la factura en la secciÃ³n de la factura
+        // Inserta la factura en la sección de la factura
         document.getElementById('factura-content').innerHTML = facturaHTML;
 
         // Oculta el formulario de compra y muestra la factura
