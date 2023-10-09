@@ -446,3 +446,38 @@ main {
 #compra-form button[type="submit"]:hover {
     background-color: #0056b3;
 }
+.texto-oferta {
+    background: linear-gradient(45deg, #148610, #ffc507);
+    color: rgb(38, 38, 54); /* Cambiar a dorado */
+    border: none;
+    padding: 10px;
+    border-radius: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+@keyframes neon-oferta {
+    0% {
+        transform: translateX(-100%);
+        background: linear-gradient(45deg, #2beb25, #dbac12);
+    }
+    25% {
+        transform: translateX(0%);
+        background: linear-gradient(45deg, #ff00ff, #ff0077);
+    }
+    50% {
+        transform: translateX(100%);
+        background: linear-gradient(45deg, #00ff00, #0088ff);
+    }
+    75% {
+        transform: translateX(0%);
+        background: linear-gradient(45deg, #dbac12, #ff7f00);
+    }
+    100% {
+        transform: translateX(-100%);
+        background: linear-gradient(45deg, #2beb25, #dbac12);
+    }
+}
