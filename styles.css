@@ -518,3 +518,35 @@ main {
     position: relative;
     z-index: 0;
 }
+.navbar {
+    background-color: #000000;
+    overflow: hidden;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul li {
+    background-color: #fa9922;
+    float: left;
+    margin: 10px;
+    border-radius: 10%;
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background-color: #ddd;
+    color: black;
+}

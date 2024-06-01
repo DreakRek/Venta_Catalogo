@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vehiculos Exclusivos</title>
+    <link rel="icon" type="image/x-icon" href="./media/icon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+
+<body>
+    <div class="contenido-principal">
+        <div class="contenedor">
+            <header>
+                <img src="./media/logo.png" alt="@dixelRP" class="logo">
+                <h1 class="titulo-neon">Venta de Vehículos Exclusivos</h1>
+                <p class="descripcion-vehiculos">Descubre una colección de vehículos inigualables que te harán sentir
+                    como un millonario. Nuestros autos exclusivos cuentan con las características más sorprendentes y
+                    el lujo que mereces.</p>
+                    <p class="descripcion-vehiculos_2">¡Haz realidad tus sueños con un vehículo único en su clase!</p>
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="vehiculos.html">Vehículos</a></li>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="skin.html">Skins</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            <main class="productos-grid">
+                <section class="producto">
+                    <img class="producto-img" src="https://sampwiki.blast.hk/wroot/images2/7/7a/Vehicle_428.jpg"
+                        alt="Securicar">
+                    <h2>Securicar</h2>
+                    <p class="descripcion-veh">Categoria: Vehiculo.</p>
+                    <p class="descripcion-veh">Capacidad: 4 Pasajeros.</p>
+                    <p class="descripcion-veh">Maletero: 12 Espacio.</p>
+                    <p class="descripcion-veh">Velocidad: 158 KMH.</p>
+                    <p class="descripcion-veh">Gasolina: 80 Litros.</p>
+                    <p class="descripcion-veh_price">Precio: 100 DIX</p>
+                    <button class="boton-comprar" data-nombre="Securicar" data-precio="100"
+                        data-imagen="https://sampwiki.blast.hk/wroot/images2/7/7a/Vehicle_428.jpg">Comprar</button>
+                </section>
+                <section class="producto-oferta">
+                    <img class="producto-oferta-img" src="https://sampwiki.blast.hk/wroot/images2/7/7d/Vehicle_417.jpg"
+                    alt="Leviathan">
+                    <h2>Leviathan</h2>
+                    <p class="descripcion-veh">Categoria: Aereo.</p>
+                    <p class="descripcion-veh">Capacidad: 2 Pasajeros.</p>
+                    <p class="descripcion-veh">Maletero: 0 Espacio.</p>
+                    <p class="descripcion-veh">Gasolina: Ilimitadas.</p>
+                    <p class="descripcion-veh_price">Precio: 350 DIX</p>
+                    <button class="boton-comprar" data-nombre="Leviathan" data-precio="350"
+                    data-imagen="https://sampwiki.blast.hk/wroot/images2/7/7d/Vehicle_417.jpg">Comprar</button>
+                    <p class="texto-oferta">|SOLO POR TIEMPO LIMITADO| FLOTA EN EL AGUA</p>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://sampwiki.blast.hk/wroot/images2/1/1e/Vehicle_504.jpg"
+                        alt="BloodringBanger">
+                    <h2>Bloodring Banger</h2>
+                    <p class="descripcion-veh">Categoria: Vehiculo.</p>
+                    <p class="descripcion-veh">Capacidad: 2 Pasajeros.</p>
+                    <p class="descripcion-veh">Maletero: 0 Espacio.</p>
+                    <p class="descripcion-veh">Velocidad: 174 KMH.</p>
+                    <p class="descripcion-veh">Gasolina: 40 Litros.</p>
+                    <p class="descripcion-veh_price">Precio: 70 DIX</p>
+                    <button class="boton-comprar" data-nombre="BloodringBanger" data-precio="70"
+                        data-imagen="https://sampwiki.blast.hk/wroot/images2/1/1e/Vehicle_504.jpg">Comprar</button>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://sampwiki.blast.hk/wroot/images2/f/f3/Vehicle_525.jpg"
+                        alt="Towtruck">
+                    <h2>Tow Truck</h2>
+                    <p class="descripcion-veh">Categoria: Vehiculo.</p>
+                    <p class="descripcion-veh">Capacidad: 2 Pasajeros.</p>
+                    <p class="descripcion-veh">Maletero: 4 Espacio.</p>
+                    <p class="descripcion-veh">Velocidad: 162 KMH.</p>
+                    <p class="descripcion-veh">Gasolina: 60 Litros.</p>
+                    <p class="descripcion-veh_price">Precio: 80 DIX</p>
+                    <button class="boton-comprar" data-nombre="Towtruck" data-precio="80"
+                        data-imagen="https://sampwiki.blast.hk/wroot/images2/f/f3/Vehicle_525.jpg">Comprar</button>
+                </section>
+                <section class="producto-oferta">
+                    <img class="producto-oferta-img" src="https://sampwiki.blast.hk/wroot/images2/f/fb/Vehicle_456.jpg"
+                    alt="Yankee">
+                    <h2>Yankee</h2>
+                    <p class="descripcion-veh">Categoria: Vehiculo.</p>
+                    <p class="descripcion-veh">Capacidad: 2 Pasajeros.</p>
+                    <p class="descripcion-veh">Maletero: 15 Espacio.</p>
+                    <p class="descripcion-veh">Velocidad: 107 KMH.</p>
+                    <p class="descripcion-veh">Gasolina: 50 Litros.</p>
+                    <p class="descripcion-veh_price">Precio: 150 DIX</p>
+                    <button class="boton-comprar" data-nombre="Yankee" data-precio="150"
+                    data-imagen="https://sampwiki.blast.hk/wroot/images2/f/fb/Vehicle_456.jpg">Comprar</button>
+                    <p class="texto-oferta">SOLO POR TIEMPO LIMITADO</p>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://sampwiki.blast.hk/wroot/images2/4/4a/Vehicle_609.jpg"
+                        alt="Boxville">
+                    <h2>Boxville</h2>
+                    <p class="descripcion-veh">Categoria: Vehiculo.</p>
+                    <p class="descripcion-veh">Capacidad: 2 Pasajeros.</p>
+                    <p class="descripcion-veh">Maletero: 15 Espacio.</p>
+                    <p class="descripcion-veh">Velocidad: 108 KMH.</p>
+                    <p class="descripcion-veh">Gasolina: 90 Litros.</p>
+                    <p class="descripcion-veh_price">Precio: 100 DIX</p>
+                    <button class="boton-comprar" data-nombre="Boxville" data-precio="100"
+                        data-imagen="https://sampwiki.blast.hk/wroot/images2/4/4a/Vehicle_609.jpg">Comprar</button>
+                </section>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; Power by Dreak / Pagina temporal de venta</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+<div class="modal-background" id="modal-background">
+
+    <div class="modal" id="modal">
+        <span class="close" id="close-modal">&times;</span>
+        <div class="modal-content" id="modal-content">
+            <!-- Contenido del modal (formulario) -->
+            <h2>Confirmar Compra</h2>
+            <form id="compra-form" method="POST">
+                <!-- Campos del formulario -->
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div>
+                    <label for="discordtag">Discordtag:</label>
+                    <input type="text" id="discordtag" name="discordtag" required>
+                </div>
+                <!-- Campos ocultos para el valor, modelo y foto del producto -->
+                <input type="hidden" id="valor-producto" name="valor">
+                <input type="hidden" id="modelo-producto" name="modelo">
+                <input type="hidden" id="foto-producto" name="foto">
+                <div>
+                    <button type="submit">Confirmar Compra</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-content" id="factura-container">
+            <div id="factura-content">
+                <!-- Contenido de la factura -->
+            </div>
+            <p style="color: red;">Saca una screenshot a la factura y mandala a ticket Solicitar admin</p>
+            <button id="cerrar-factura-btn">Volver</button>
+        </div>
+    </div>
+</div>
+
+</html>

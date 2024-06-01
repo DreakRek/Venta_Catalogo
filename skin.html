@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vehiculos Exclusivos</title>
+    <link rel="icon" type="image/x-icon" href="./media/icon.ico">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.4/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+
+<body>
+    <div class="contenido-principal">
+        <div class="contenedor">
+            <header>
+                <img src="./media/logo.png" alt="@dixelRP" class="logo">
+                <h1 class="titulo-neon">Venta de Vehículos Exclusivos</h1>
+                <p class="descripcion-vehiculos">Descubre una colección de vehículos inigualables que te harán sentir
+                    como un millonario. Nuestros autos exclusivos cuentan con las características más sorprendentes y
+                    el lujo que mereces.</p>
+                    <p class="descripcion-vehiculos_2">¡Haz realidad tus sueños con un vehículo único en su clase!</p>
+                    <nav class="navbar">
+                        <ul>
+                            <li><a href="vehiculos.html">Vehículos</a></li>
+                            <li><a href="index.html">Inicio</a></li>
+                            <li><a href="skin.html">Skins</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            <main class="productos-grid">
+                <section class="producto">
+                    <img class="producto-img" src="https://wiki.multitheftauto.com/images/8/8e/Skinid70.jpg"
+                        alt="Doc">
+                    <h2>Skin Doc</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 35 DIX</p>
+                    <button class="boton-comprar" data-nombre="Doc" data-precio="35"
+                        data-imagen="https://wiki.multitheftauto.com/images/8/8e/Skinid70.jpg">Comprar</button>
+                </section>
+                <section class="producto-oferta">
+                    <img class="producto-oferta-img" src="https://wiki.multitheftauto.com/images/b/bc/Skinid0.jpg"
+                        alt="CJ">
+                    <h2>Skin CJ</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 1000 DIX</p>
+                    <button class="boton-comprar" data-nombre="CJ" data-precio="1000"
+                        data-imagen="https://wiki.multitheftauto.com/images/b/bc/Skinid0.jpg">Comprar</button>
+                        <p class="texto-oferta">SOLO SE VENDERA 1 SKIN DE CJ</p>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://wiki.multitheftauto.com/images/7/76/Skinid144.jpg"
+                    alt="Traficante">
+                    <h2>Skin Traficante</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 25 DIX</p>
+                    <button class="boton-comprar" data-nombre="Traficante" data-precio="25"
+                    data-imagen="https://wiki.multitheftauto.com/images/7/76/Skinid144.jpg">Comprar</button>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://wiki.multitheftauto.com/images/2/2a/Skinid155.jpg"
+                    alt="Pizzero">
+                    <h2>Skin Pizzero</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 55 DIX</p>
+                    <button class="boton-comprar" data-nombre="Pizzero" data-precio="55"
+                    data-imagen="https://wiki.multitheftauto.com/images/2/2a/Skinid155.jpg">Comprar</button>
+                </section>
+                <section class="producto-oferta">
+                    <img class="producto-oferta-img" src="https://wiki.multitheftauto.com/images/b/b7/Skinid264.jpg"
+                        alt="Payaso">
+                    <h2>Skin Payaso</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 50 DIX</p>
+                    <button class="boton-comprar" data-nombre="Payaso" data-precio="50"
+                        data-imagen="https://wiki.multitheftauto.com/images/b/b7/Skinid264.jpg">Comprar</button>
+                        <p class="texto-oferta">SOLO POR TIEMPO LIMITADO</p>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://wiki.multitheftauto.com/images/7/74/Skinid205.jpg"
+                        alt="Burger">
+                    <h2>Skin Burger</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 40 DIX</p>
+                    <button class="boton-comprar" data-nombre="Burger" data-precio="40"
+                        data-imagen="https://wiki.multitheftauto.com/images/7/74/Skinid205.jpg">Comprar</button>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://wiki.multitheftauto.com/images/1/1a/Skinid260.jpg"
+                        alt="Obrero">
+                    <h2>Skin Obrero</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 20 DIX</p>
+                    <button class="boton-comprar" data-nombre="Obrero" data-precio="20"
+                        data-imagen="https://wiki.multitheftauto.com/images/1/1a/Skinid260.jpg">Comprar</button>
+                </section>
+                <section class="producto-oferta">
+                    <img class="producto-oferta-img" src="https://wiki.multitheftauto.com/images/0/01/Skinid167.jpg"
+                    alt="Pollo">
+                    <h2>Skin Pollo</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 70 DIX</p>
+                    <button class="boton-comprar" data-nombre="Pollo" data-precio="70"
+                    data-imagen="https://wiki.multitheftauto.com/images/0/01/Skinid167.jpg">Comprar</button>
+                    <p class="texto-oferta">SOLO POR TIEMPO LIMITADO</p>
+                </section>
+                <section class="producto">
+                    <img class="producto-img" src="https://wiki.multitheftauto.com/images/9/90/Skinid309.jpg"
+                        alt="Mecanico">
+                    <h2>Skin Mecanico</h2>
+                    <p class="descripcion-veh">Categoria: Premium.</p>
+                    <p class="descripcion-veh_price">Precio: 55 DIX</p>
+                    <button class="boton-comprar" data-nombre="Mecanico" data-precio="55"
+                        data-imagen="https://wiki.multitheftauto.com/images/9/90/Skinid309.jpg">Comprar</button>
+                </section>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; Power by Dreak / Pagina temporal de venta</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+<div class="modal-background" id="modal-background">
+
+    <div class="modal" id="modal">
+        <span class="close" id="close-modal">&times;</span>
+        <div class="modal-content" id="modal-content">
+            <!-- Contenido del modal (formulario) -->
+            <h2>Confirmar Compra</h2>
+            <form id="compra-form" method="POST">
+                <!-- Campos del formulario -->
+                <div>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div>
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div>
+                    <label for="discordtag">Discordtag:</label>
+                    <input type="text" id="discordtag" name="discordtag" required>
+                </div>
+                <!-- Campos ocultos para el valor, modelo y foto del producto -->
+                <input type="hidden" id="valor-producto" name="valor">
+                <input type="hidden" id="modelo-producto" name="modelo">
+                <input type="hidden" id="foto-producto" name="foto">
+                <div>
+                    <button type="submit">Confirmar Compra</button>
+                </div>
+            </form>
+        </div>
+        <div class="modal-content" id="factura-container">
+            <div id="factura-content">
+                <!-- Contenido de la factura -->
+            </div>
+            <p style="color: red;">Saca una screenshot a la factura y mandala a ticket Solicitar admin</p>
+            <button id="cerrar-factura-btn">Volver</button>
+        </div>
+    </div>
+</div>
+
+</html>
